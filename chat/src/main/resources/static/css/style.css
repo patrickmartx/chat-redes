@@ -1,0 +1,119 @@
+:root {
+    --cor-principal: #5CB85C;
+    --cor-secundaria: #3A6B35;
+    --cor-fundo-container: #E8E6E1;
+    --cor-fundo-geral: #f0f2f5;
+    --cor-texto-claro: #ffffff;
+    --cor-texto-escuro: #333333;
+    --cor-borda: #cccccc;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--cor-fundo-geral);
+    color: var(--cor-texto-escuro);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    color: var(--cor-texto-escuro);
+}
+
+a {
+    color: var(--cor-secundaria);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.main-container {
+    background-color: var(--cor-fundo-container);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    max-width: 960px;
+    margin: 2rem auto;
+}
+
+.header-custom {
+    background-color: var(--cor-principal);
+    color: var(--cor-texto-claro);
+    padding: 1rem 0;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    text-align: center;
+}
+
+.header-custom h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: var(--cor-texto-claro);
+}
+
+.form-label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.form-control {
+    border-radius: 5px;
+    border: 1px solid var(--cor-borda);
+    box-shadow: none !important;
+}
+
+.form-control:focus {
+    border-color: var(--cor-principal);
+}
+
+.btn-principal {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto-claro);
+    border: none;
+    padding: 10px 25px;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-principal:hover {
+    background-color: #2e532a;
+    color: var(--cor-texto-claro);
+}
+
+.header-nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.header-nav .btn-sm {
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 8px 20px;
+    border-width: 2px;
+}
+
+.main-container {
+    flex: 1 0 auto;
+}
+
+.footer-custom {
+    background-color: #343a40;
+    color: rgba(255, 255, 255, 0.7);
+    flex-shrink: 0;
+    font-size: 0.9rem;
+}
+
+.footer-custom .integrantes {
+    font-weight: 500;
+}
+
+.footer-custom .integrantes strong {
+    color: #ffffff;
+}
