@@ -1,60 +1,97 @@
 #chat-page {
     display: flex;
     flex-direction: column;
-    height: 70vh;
+    height: 75vh;
 }
-
+.chat-header {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-bottom: none;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+}
+.chat-header h5 {
+    margin-bottom: 0.25rem;
+}
+.header-info {
+    margin-bottom: 0;
+    color: #6c757d;
+    font-weight: 500;
+}
+.status-indicator {
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 4px;
+    color: white;
+}
+.status-indicator.online {
+    background-color: var(--cor-principal);
+}
+.status-indicator.offline {
+    background-color: #dc3545;
+}
 #message-area {
     list-style-type: none;
     padding: 20px;
     margin: 0;
     overflow-y: auto;
     flex-grow: 1;
-    border: 1px solid var(--cor-borda);
+    border: 1px solid #dee2e6;
     background-color: #ffffff;
-    border-radius: 5px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
     margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
 }
-
 .chat-message {
-    padding: 10px 15px;
+    padding: 8px 15px; /* Padding padrão para mensagens de texto E IMAGEM */
     margin-bottom: 10px;
     border-radius: 20px;
     max-width: 70%;
     line-height: 1.4;
     word-wrap: break-word;
 }
-
 .chat-message.other {
     background-color: #e9e9eb;
-    color: var(--cor-texto-escuro);
     align-self: flex-start;
-    margin-right: auto;
 }
-
 .chat-message.self {
     background-color: var(--cor-principal);
     color: var(--cor-texto-claro);
     align-self: flex-end;
-    margin-left: auto;
 }
-
 .chat-message .sender {
     font-weight: bold;
     display: block;
     margin-bottom: 5px;
     font-size: 0.85rem;
 }
-
-#message-form {
-    display: flex;
+.chat-message.self .sender {
+    color: var(--cor-texto-claro);
+}
+.chat-message p {
+    margin: 0;
+}
+.chat-image {
+    max-width: 100%; /* A imagem agora ocupa 100% do espaço do balão */
+    border-radius: 10px; /* Bordas arredondadas para a imagem */
+    cursor: pointer;
+    transition: opacity 0.2s;
+    display: block;
+}
+.chat-image:hover {
+    opacity: 0.8;
 }
 
-#message-form #message {
-    flex-grow: 1;
-    margin-right: 10px;
-}
+/* --- CORREÇÃO ESTÁ AQUI --- */
+/* REMOVEMOS a regra .chat-message--image que tirava o estilo do balão. */
+/* Agora todas as mensagens, de texto ou imagem, terão o mesmo estilo de balão. */
 
-#message-form button {
-    white-space: nowrap;
+.event-message {
+    display: none;
 }

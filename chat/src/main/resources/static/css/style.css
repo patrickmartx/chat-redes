@@ -38,6 +38,7 @@ a:hover {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     max-width: 960px;
     margin: 2rem auto;
+    flex: 1 0 auto;
 }
 
 .header-custom {
@@ -99,10 +100,6 @@ a:hover {
     border-width: 2px;
 }
 
-.main-container {
-    flex: 1 0 auto;
-}
-
 .footer-custom {
     background-color: #343a40;
     color: rgba(255, 255, 255, 0.7);
@@ -116,4 +113,94 @@ a:hover {
 
 .footer-custom .integrantes strong {
     color: #ffffff;
+}
+
+.list-group-item-action:hover {
+    background-color: var(--cor-principal);
+    color: var(--cor-texto-claro);
+    border-color: var(--cor-principal);
+}
+
+
+.list-group-item-action:hover h5,
+.list-group-item-action:hover p,
+.list-group-item-action:hover small {
+    color: var(--cor-texto-claro);
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.card-header {
+    background-color: var(--cor-principal);
+    color: var(--cor-texto-claro);
+    font-weight: bold;
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+.card-body p {
+    margin-bottom: 0.5rem;
+}
+
+.card-body p strong {
+    color: var(--cor-texto-escuro);
+}
+
+.card-body p[style*="white-space: pre-wrap"] {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #fbfbfb;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.expandable-image {
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.expandable-image:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.image-modal-overlay {
+    display: none;
+    position: fixed;
+    z-index: 1050;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.image-modal-content {
+    margin: auto;
+    display: block;
+    max-width: 85%;
+    max-height: 85%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.image-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.image-modal-close:hover,
+.image-modal-close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
 }

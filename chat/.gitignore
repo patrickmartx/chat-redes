@@ -31,3 +31,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Ignora a pasta do banco de dados H2 e seu conteúdo
+database/
