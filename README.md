@@ -99,11 +99,12 @@ Este é um sistema desenvolvido para facilitar a comunicação entre alunos e pr
     * `nomeAluno` (String): Nome do aluno que submeteu.
     * `turma` (String): Turma do aluno.
     * `descricao` (String): Texto da dúvida.
-    * `caminhoImagem` (String): Caminho para a imagem anexada.
+    * `dadosImagem` (byte[]): Bytes da imagem anexada.
     * `dataCriacao` (LocalDateTime): Data e hora da submissão.
 * **`ChatMessage`**: Representa uma mensagem no chat.
     * `id` (Long): Identificador único.
     * `duvida` (Duvida): A dúvida à qual esta mensagem pertence.
     * `remetente` (String): Quem enviou a mensagem (ex: nome do aluno, nome do professor).
     * `conteudo` (String): O texto da mensagem.
+    * `dadosImagem` (byte[]): Bytes da imagem anexada.
     * `timestamp` (LocalDateTime): Data e hora do envio da mensagem.
