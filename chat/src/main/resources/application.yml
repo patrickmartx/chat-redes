@@ -2,7 +2,7 @@ spring:
   application:
     name: chat
   datasource:
-    url: jdbc:h2:mem:chatdb
+    url: jdbc:h2:file:./database/chatdb;AUTO_SERVER=TRUE
     driver-class-name: org.h2.Driver
     username: sa
     password:
@@ -12,13 +12,15 @@ spring:
       path: /h2-console
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create-drop
     show-sql: true
     properties:
       hibernate:
         format_sql: true
+
+    # Importante: Garante que os dados da imagem (LOBs) possam ser carregados
+    # de forma tardia (lazy) na camada de visualização sem erros.
+    open-in-view: true
+
 server:
   port: 8080
-
-duvidas:
-  imagem-dir: uploads/img_duvidas

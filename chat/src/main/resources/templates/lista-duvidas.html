@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Dúvidas - Professor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<div th:replace="~{fragments/header :: cabecalho}"></div>
+
+<div class="main-container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h3>Painel de Dúvidas Recebidas</h3>
+        <form th:action="@{/perform_logout}" method="post">
+            <button type="submit" class="btn btn-outline-danger btn-sm">
+                <i class="fas fa-sign-out-alt"></i> Sair
+            </button>
+        </form>
+    </div>
+
+    <div th:if="${#lists.isEmpty(duvidas)}" class="alert alert-info">
+        Nenhuma dúvida foi registrada até o momento.
+    </div>
+
+    <div th:if="${not #lists.isEmpty(duvidas)}" class="list-group">
+        <a th:each="duvida : ${duvidas}"
+           href="#" th:href="@{/duvidas/{id}/detalhes(id=${duvida.id})}" class="list-group-item list-group-item-action flex-column align-items-start">
+
+        <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1" th:text="${duvida.getId()} + '- Dúvida de ' + ${duvida.nomeAluno}">Dúvida de Aluno</h5>
+            <small th:text="${#temporals.format(duvida.dataCriacao, 'dd/MM/yyyy HH:mm')}">Data</small>
+        </div>
+        <small th:text="'Turma: ' + ${duvida.turma}">Turma</small>
+        </a>
+    </div>
+</div>
+
+<div th:replace="~{fragments/footer :: rodape}"></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
