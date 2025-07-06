@@ -67,8 +67,6 @@ Este é um sistema desenvolvido para facilitar a comunicação entre alunos e pr
     * **Console H2:** `http://localhost:8080/h2-console`
         * **JDBC URL:** `jdbc:h2:file:./database/sistemaduvidasdb`
         * **User Name:** `sa`
-        * **Password:** `password`
-    * (As rotas do professor, como a lista de dúvidas, estarão disponíveis após a implementação do login).
 
 ## Como Executar (Com Docker)
 
@@ -83,7 +81,7 @@ Este é um sistema desenvolvido para facilitar a comunicação entre alunos e pr
     ```
 
 2.  **Acesse a aplicação:**
-    * `http://localhost:8080/duvidas/nova`
+    * `http://localhost:8080/`
 
     Os dados do H2 e as imagens enviadas serão persistidos em volumes definidos no `docker-compose.yml` (nas pastas `./database` e `./uploads/images` na raiz do projeto, respectivamente).
 
@@ -108,3 +106,13 @@ Este é um sistema desenvolvido para facilitar a comunicação entre alunos e pr
     * `conteudo` (String): O texto da mensagem.
     * `dadosImagem` (byte[]): Bytes da imagem anexada.
     * `timestamp` (LocalDateTime): Data e hora do envio da mensagem.
+
+# Diagramas
+## Diagrama de entidades
+![Diagrama de entidades do sistema](doc/mermaid-chat-redes.png)
+
+## Diagramas de sequência
+### Aluno
+![Diagrama de sequência da ação do aluno no sistema](doc/mermaid-student-action.png)
+### Professor
+![Diagrama de sequência da ação do professor no sistema](doc/mermaid-teacher-action.png)
